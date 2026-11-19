@@ -20,6 +20,10 @@ os.environ.setdefault("STREAMLIT_SERVER_FILE_WATCHER_TYPE", "none")
 os.environ.setdefault("STREAMLIT_SERVER_ENABLE_CORS", "false")
 os.environ.setdefault("STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION", "false")
 os.environ.setdefault("STREAMLIT_BROWSER_GATHER_USAGE_STATS", "false")
+# Vercel unpacks packages outside site-packages, which makes Streamlit
+# treat itself as a source checkout and skip the page files. Force the
+# production server so "/" serves the dashboard instead of a 404.
+os.environ.setdefault("STREAMLIT_GLOBAL_DEVELOPMENT_MODE", "false")
 
 import streamlit as st
 
