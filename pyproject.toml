@@ -1,0 +1,9 @@
+[project]
+name = "ecommerce-transaction-aggregator"
+version = "1.0.0"
+description = "Clean Olist orders, calculate revenue, and one-hot encode categories."
+requires-python = ">=3.12"
+readme = "README.md"
+
+[tool.vercel]
+entrypoint = "app:app"
